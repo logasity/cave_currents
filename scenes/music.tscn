@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxbaogsxoi3h0"]
+
+[ext_resource type="AudioStream" uid="uid://c172pl75uusva" path="res://assets/Sound/watery_cave_loop.ogg" id="1_05ggv"]
+
+[node name="music" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_05ggv")
+volume_db = -9.369
+autoplay = true
+bus = &"music"

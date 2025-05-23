@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://dwncsoe7ai2ry"]
+
+[ext_resource type="Script" uid="uid://bs44oxxv5y1an" path="res://scrips/turtel.gd" id="1_jghp5"]
+[ext_resource type="Texture2D" uid="uid://b5tpkum5ix7vk" path="res://assets/PNG/animals 1.png" id="2_axj5g"]
+[ext_resource type="FontFile" uid="uid://crsg1kjx6k0k4" path="res://assets/Minecraft.ttf" id="2_ktd2i"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ktd2i"]
+radius = 10.9921
+height = 44.0139
+
+[node name="turtel" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_jghp5")
+
+[node name="trashy" type="Sprite2D" parent="."]
+texture = ExtResource("2_axj5g")
+region_enabled = true
+region_rect = Rect2(44.5692, 10.711, 44.4073, 30.0724)
+
+[node name="helped" type="Sprite2D" parent="."]
+texture = ExtResource("2_axj5g")
+region_enabled = true
+region_rect = Rect2(0, 12.991, 45.5847, 24.2342)
+
+[node name="thank you message" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("2_ktd2i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = -1.57839
+shape = SubResource("CapsuleShape2D_ktd2i")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 12.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

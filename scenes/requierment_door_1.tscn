@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbj1ggaw8od7j"]
+
+[ext_resource type="Script" uid="uid://blc48inmxk5j0" path="res://scrips/door_requierment1.gd" id="1_6ej8s"]
+[ext_resource type="Texture2D" uid="uid://0wumjns18f8m" path="res://assets/PNG/environment/platform.png" id="2_3fmr1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iaywg"]
+size = Vector2(50, 92)
+
+[node name="requierment_door1" type="StaticBody2D"]
+script = ExtResource("1_6ej8s")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.58251
+texture = ExtResource("2_3fmr1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -1)
+shape = SubResource("RectangleShape2D_iaywg")

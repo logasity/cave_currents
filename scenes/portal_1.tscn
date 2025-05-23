@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://bkw3idyclb0y6"]
+
+[ext_resource type="Texture2D" uid="uid://85ti2285uwgt" path="res://assets/PNG/environment/tiles.png" id="1_533wm"]
+[ext_resource type="Script" uid="uid://cbd2405ha8sma" path="res://scrips/portal_1.gd" id="1_kmf3n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_533wm"]
+size = Vector2(39, 77)
+
+[node name="portal" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_kmf3n")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_533wm")
+region_enabled = true
+region_rect = Rect2(397.436, 11.6133, 66.2545, 89.0095)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-9.5, 0.5)
+shape = SubResource("RectangleShape2D_533wm")
+
+[node name="destination" type="Marker2D" parent="."]
+position = Vector2(79, 0)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

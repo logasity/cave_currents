@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://dl0erj7u056po"]
+
+[ext_resource type="Script" uid="uid://0dyf0bv1lvrn" path="res://scrips/end_screen_and_credits.gd" id="1_0vei5"]
+[ext_resource type="FontFile" uid="uid://crsg1kjx6k0k4" path="res://assets/Minecraft.ttf" id="2_8jgn8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0vei5"]
+size = Vector2(338, 179)
+
+[node name="end screen and credits" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_0vei5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(168, 84.5)
+shape = SubResource("RectangleShape2D_0vei5")
+
+[node name="Label" type="Label" parent="."]
+z_index = 10
+offset_right = 338.0
+offset_bottom = 231.0
+theme_override_fonts/font = ExtResource("2_8jgn8")
+text = "Thanks for  playing my game!
+
+Credits: Music by Pascal Belisle, most assets by ansimuz, some assets modifyed by me.
+
+I made sure that all assets i used were listed under the creative commons licence so they are free to use.
+"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

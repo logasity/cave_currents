@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://ctjrw6imuo47q"]
+
+[ext_resource type="Texture2D" uid="uid://tklg74e7xro8" path="res://assets/PNG/enemies/sea urchin.png" id="1_iurwt"]
+[ext_resource type="Script" uid="uid://cgepv03clfmwl" path="res://scrips/sea_urchin.gd" id="1_naeib"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bavek"]
+atlas = ExtResource("1_iurwt")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5y04o"]
+atlas = ExtResource("1_iurwt")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iurwt"]
+animations = [{
+"frames": [{
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_bavek")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_5y04o")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+position = Vector2(249, -73)
+sprite_frames = SubResource("SpriteFrames_iurwt")
+autoplay = "default"
+script = ExtResource("1_naeib")
